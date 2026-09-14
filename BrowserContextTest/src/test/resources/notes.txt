@@ -1,0 +1,22 @@
+Page fixture:
+    In Playwright Test for JavaScript/TypeScript, a test can receive a built-in "page" fixture
+    However, in Java Playwright and TestNG framework that exact built-in page fixture is not provided.
+
+    In this framework, the BaseTest creates and exposes a Page object from:
+        page = context.newPage();
+
+    Tests can then use the protected page field as their ready-to-use test page
+
+
+BrowserContext:
+    A BrowserContext is a separate browser session container.
+    It represents an isolated environment in which a Page operates.
+    A context can contain its own: cookies, local storage, cache, session state, pages.
+
+
+Fresh BrowserContext creation:
+    It is created using: BrowserContext newContext = browser.newContext();
+    The new context is isolated, and it does not inherit state from the original test context
+    The new context created above can also be closed when done with: newContext.close();
+
+
