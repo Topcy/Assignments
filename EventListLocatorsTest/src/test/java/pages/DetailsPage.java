@@ -31,6 +31,7 @@ public class DetailsPage {
 
     public String comparePrice(){
        Locator priceText = page.getByText("$");
+       priceText.count();
        return priceText.first().innerText();
     }
 
